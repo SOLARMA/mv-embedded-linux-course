@@ -81,6 +81,8 @@ ls -la build/ || true
 ls -la build/conf/ || true
 ls -la sources/ || true
 
+./setup-environment --help
+
 MACHINE=udooneo source ./setup-environment build
 MACHINE=udooneo bitbake core-image-minimal
 
