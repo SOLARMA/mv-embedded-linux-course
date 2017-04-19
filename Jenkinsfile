@@ -54,9 +54,7 @@ cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
 # FIXME: Should not append if already present
-mkdir -p build/conf
-touch build/conf/local.conf
-cat <<END >>build/conf/local.conf
+[ -e build/conf/local.conf ] && cat >>build/conf/local.conf <<END
 ACCEPT_FSL_EULA="1"
 END
 
