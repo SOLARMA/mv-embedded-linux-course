@@ -31,9 +31,14 @@ ls -la
 # EOF'''
         sh '''#!/bin/bash -xe
 
-MACHINE=udooneo source ./setup-environment build'''
-        sh '''ls -la
-ls -la conf/'''
+MACHINE=udooneo source ./setup-environment build
+
+# DEBUG
+ls -la
+ls -la conf/
+cat conf/bblayers.conf
+
+# EOF'''
       }
     }
   }
