@@ -54,9 +54,12 @@ cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
 # ???
-export ACCEPT_FSL_EULA="1"
-export EULA_ACCEPTED="1"
-#
+# export ACCEPT_FSL_EULA="1"
+# export EULA_ACCEPTED="1"
+cat <<END >>build/conf/local.conf
+ACCEPT_FSL_EULA="1"
+END
+
 export MACHINE=udooneo
 source ./setup-environment build
 
