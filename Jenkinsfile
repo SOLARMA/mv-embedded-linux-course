@@ -18,9 +18,7 @@ ls -la
 # EOF'''
         sh '''#!/bin/bash -xe
 
-repo init \
-    -u https://github.com/graugans/fsl-community-bsp-platform \
-    -b jethro
+repo init     -u https://github.com/graugans/fsl-community-bsp-platform     -b jethro
 
 # EOF'''
         sh '''#!/bin/bash -xe
@@ -49,10 +47,15 @@ pwd
 ls -la
 ls -la build/ || true
 ls -la build/conf/ || true
+ls -la sources/ || true
+
+# DEBUG
 cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
-MACHINE=udooneo source ./setup-environment build
+export ACCEPT_FSL_EULA="1"
+export MACHINE=udooneo
+source ./setup-environment build
 
 # DEBUG
 ls -la
