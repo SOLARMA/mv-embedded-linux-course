@@ -20,7 +20,7 @@ ls -la
         sh 'repo sync'
       }
     }
-    stage('Verify') {
+    stage('Configure') {
       steps {
         sh '''#!/bin/bash -xe
 
@@ -29,6 +29,9 @@ printenv | sort
 ls -la
 
 # EOF'''
+        sh 'MACHINE=udooneo source ./setup-environment build'
+        sh '''ls -la
+ls -la conf/'''
       }
     }
   }
