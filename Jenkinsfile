@@ -29,7 +29,9 @@ printenv | sort
 ls -la
 
 # EOF'''
-        sh 'MACHINE=udooneo source ./setup-environment build'
+        sh '''#!/bin/bash -xe
+
+MACHINE=udooneo source ./setup-environment build'''
         sh '''ls -la
 ls -la conf/'''
       }
