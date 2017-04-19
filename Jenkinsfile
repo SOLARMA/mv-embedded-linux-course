@@ -16,6 +16,8 @@ pwd
 ls -la
 
 # EOF'''
+        sh 'repo init -u https://github.com/graugans/fsl-community-bsp-platform -b jethro'
+        sh 'repo sync'
       }
     }
   }
