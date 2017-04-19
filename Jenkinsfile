@@ -82,7 +82,7 @@ ls -la build/conf/ || true
 ls -la sources/ || true
 
 MACHINE=udooneo source ./setup-environment build
-bitbake core-image-minimal
+MACHINE=udooneo bitbake core-image-minimal
 
 # EOF'''
       }
