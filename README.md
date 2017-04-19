@@ -1,2 +1,5 @@
-# test-hackathon-pipeline
-A test Jenkins pipeline for the Hackathon Droidcon Italy 2017
+# mv-embedded-linux-course
+
+Jenkins pipelines in support of the "Embedded Linux Course" authored by [prof. Massimo Violante](https://www.linkedin.com/in/massimo-violante-76991919/).
+
+Copyright (C) 2017, [SOLARMA s.n.c.](http://www.solarma.it/)
