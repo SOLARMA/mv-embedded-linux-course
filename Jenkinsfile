@@ -6,7 +6,7 @@ pipeline {
     
   }
   stages {
-    stage('Stage 1') {
+    stage('Checkout') {
       steps {
         echo 'Stage 1'
         sh '''#!/bin/sh
@@ -18,6 +18,17 @@ ls -la
 # EOF'''
         sh 'repo init -u https://github.com/graugans/fsl-community-bsp-platform -b jethro'
         sh 'repo sync'
+      }
+    }
+    stage('Verify') {
+      steps {
+        sh '''#!/bin/bash -xe
+
+pwd
+printenv | sort
+ls -la
+
+# EOF'''
       }
     }
   }
