@@ -18,15 +18,15 @@ ls -la
 # EOF'''
         sh '''#!/bin/bash -xe
 
-repo init     -u https://github.com/graugans/fsl-community-bsp-platform     -b jethro
+repo init -u https://github.com/graugans/fsl-community-bsp-platform     -b jethro
 
 # EOF'''
         sh '''#!/bin/bash -xe
 
+repo sync
+
 # DEBUG
 repo manifest -r
-
-repo sync
 
 # EOF'''
       }
