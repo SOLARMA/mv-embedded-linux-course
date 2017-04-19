@@ -8,16 +8,29 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        echo 'Stage 1'
-        sh '''#!/bin/sh
+        echo 'INFO: Checkout'
+        sh '''#!/bin/bash -xe
 
 id
 pwd
 ls -la
 
 # EOF'''
-        sh 'repo init -u https://github.com/graugans/fsl-community-bsp-platform -b jethro'
-        sh 'repo sync'
+        sh '''#!/bin/bash -xe
+
+repo init \
+    -u https://github.com/graugans/fsl-community-bsp-platform \
+    -b jethro
+
+# EOF'''
+        sh '''#!/bin/bash -xe
+
+# DEBUG
+repo manifest -r
+
+repo sync
+
+# EOF'''
       }
     }
     stage('Configure') {
