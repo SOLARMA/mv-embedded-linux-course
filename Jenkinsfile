@@ -53,9 +53,7 @@ ls -la sources/ || true
 cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
-# ???
-# export ACCEPT_FSL_EULA="1"
-# export EULA_ACCEPTED="1"
+# FIXME: Should not append if already present
 cat <<END >>build/conf/local.conf
 ACCEPT_FSL_EULA="1"
 END
@@ -68,6 +66,24 @@ ls -la
 ls -la conf/ || true
 cat conf/bblayers.conf || true
 cat conf/local.conf || true
+
+# EOF'''
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '''#!/bin/bash -xe
+
+# DEBUG
+pwd
+ls -la
+ls -la build/ || true
+ls -la build/conf/ || true
+ls -la sources/ || true
+
+export MACHINE=udooneo
+source ./setup-environment build
+bitbake core-image-minimal
 
 # EOF'''
       }
