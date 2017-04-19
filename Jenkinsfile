@@ -53,7 +53,10 @@ ls -la sources/ || true
 cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
+# ???
 export ACCEPT_FSL_EULA="1"
+export EULA_ACCEPTED="1"
+#
 export MACHINE=udooneo
 source ./setup-environment build
 
