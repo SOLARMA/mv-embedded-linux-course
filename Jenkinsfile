@@ -31,12 +31,21 @@ ls -la
 # EOF'''
         sh '''#!/bin/bash -xe
 
+# DEBUG
+pwd
+ls -la
+ls -la build/ || true
+ls -la build/conf/ || true
+cat build/conf/bblayers.conf || true
+cat build/conf/local.conf || true
+
 MACHINE=udooneo source ./setup-environment build
 
 # DEBUG
 ls -la
-ls -la conf/
-cat conf/bblayers.conf
+ls -la conf/ || true
+cat conf/bblayers.conf || true
+cat conf/local.conf || true
 
 # EOF'''
       }
