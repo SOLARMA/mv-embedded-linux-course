@@ -49,8 +49,8 @@ ls -la build/ || true
 ls -la build/conf/ || true
 ls -la sources/ || true
 
-# DEBUG
-rm -rf build/
+# Uncomment for a scratch build
+# rm -rf build/
 
 export EULA=1
 
