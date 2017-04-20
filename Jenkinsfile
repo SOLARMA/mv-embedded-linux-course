@@ -52,6 +52,12 @@ ls -la sources/ || true
 # Uncomment for a scratch build
 # rm -rf build/
 
+# Workaround for "Please use a locale setting which supports utf-8."
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8 
+
+# Silence accepting Freescale EULA
 export EULA=1
 
 # ./setup-environment --help
