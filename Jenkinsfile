@@ -87,6 +87,11 @@ ls -la build/ || true
 ls -la build/conf/ || true
 ls -la sources/ || true
 
+# Workaround for "Please use a locale setting which supports utf-8."
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8 
+
 source ./setup-environment build
 
 # DEBUG
