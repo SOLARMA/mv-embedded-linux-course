@@ -50,24 +50,22 @@ ls -la build/conf/ || true
 ls -la sources/ || true
 
 # DEBUG
-cat build/conf/bblayers.conf || true
-cat build/conf/local.conf || true
+rm -rf build/
 
 ./setup-environment --help
 
-# FIXME: Should not append if already present
-[ -e build/conf/local.conf ] && cat >>build/conf/local.conf <<END
-ACCEPT_FSL_EULA="1"
-END
-
-export MACHINE=udooneo
-source ./setup-environment build
+MACHINE=udooneo source ./setup-environment build
 
 # DEBUG
 ls -la
 ls -la conf/ || true
 cat conf/bblayers.conf || true
 cat conf/local.conf || true
+
+# FIXME: Should not append if already present
+[ -e build/conf/local.conf ] && cat >>build/conf/local.conf <<END
+ACCEPT_FSL_EULA="1"
+END
 
 # EOF'''
       }
