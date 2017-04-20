@@ -52,11 +52,17 @@ ls -la sources/ || true
 # Uncomment for a scratch build
 # rm -rf build/
 
+# Workaround for "Please use a locale setting which supports utf-8."
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8 
+
+# Silence accepting Freescale EULA
 export EULA=1
 
 # ./setup-environment --help
 
-MACHINE=udooneo source ./setup-environment build
+MACHINE=udooneo DISTRO=poky source ./setup-environment build
 
 # Add extra Yocto layers
 echo 'BBLAYERS += "   ${BSPDIR}/sources/meta-udoo "' >>conf/bblayers.conf
@@ -81,14 +87,20 @@ ls -la build/ || true
 ls -la build/conf/ || true
 ls -la sources/ || true
 
+# Workaround for "Please use a locale setting which supports utf-8."
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8 
+
 source ./setup-environment build
 
 # DEBUG
 cat conf/local.conf
 cat conf/bblayers.conf
 
+bitbake logrotate
 # bitbake core-image-minimal
-bitbake core-image-full-cmdline
+# bitbake core-image-full-cmdline
 
 # EOF'''
       }
