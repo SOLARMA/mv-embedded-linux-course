@@ -58,6 +58,13 @@ export EULA=1
 
 MACHINE=udooneo source ./setup-environment build
 
+# Add extra Yocto layers
+cat >>conf/bblayers.conf <<END
+BBLAYERS += " \
+  $${BSPDIR}/sources/meta-udoo \
+"
+END
+
 # DEBUG
 ls -la
 ls -la conf/ || true
