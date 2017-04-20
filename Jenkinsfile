@@ -51,9 +51,10 @@ ls -la sources/ || true
 
 # DEBUG
 rm -rf build/
+
 export EULA=1
 
-./setup-environment --help
+# ./setup-environment --help
 
 MACHINE=udooneo source ./setup-environment build
 
@@ -62,11 +63,6 @@ ls -la
 ls -la conf/ || true
 cat conf/bblayers.conf || true
 cat conf/local.conf || true
-
-# FIXME: Should not append if already present
-[ -e build/conf/local.conf ] && cat >>build/conf/local.conf <<END
-ACCEPT_FSL_EULA="1"
-END
 
 # EOF'''
       }
