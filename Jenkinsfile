@@ -53,6 +53,8 @@ ls -la sources/ || true
 cat build/conf/bblayers.conf || true
 cat build/conf/local.conf || true
 
+./setup-environment --help
+
 # FIXME: Should not append if already present
 [ -e build/conf/local.conf ] && cat >>build/conf/local.conf <<END
 ACCEPT_FSL_EULA="1"
