@@ -51,6 +51,7 @@ ls -la sources/ || true
 
 # DEBUG
 rm -rf build/
+export EULA=1
 
 ./setup-environment --help
 
