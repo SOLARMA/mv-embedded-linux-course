@@ -60,7 +60,7 @@ MACHINE=udooneo source ./setup-environment build
 
 # Add extra Yocto layers
 cat >>conf/bblayers.conf <<END
-BBLAYERS += "   \${BSPDIR}/sources/meta-udoo "
+BBLAYERS += "   \$\{BSPDIR\}/sources/meta-udoo "
 END
 
 # DEBUG
@@ -83,7 +83,7 @@ ls -la build/ || true
 ls -la build/conf/ || true
 ls -la sources/ || true
 
-MACHINE=udooneo source ./setup-environment build
+source ./setup-environment build
 
 # DEBUG
 cat conf/local.conf
