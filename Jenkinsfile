@@ -56,7 +56,7 @@ export EULA=1
 
 # ./setup-environment --help
 
-MACHINE=udooneo source ./setup-environment build
+MACHINE=udooneo DISTRO=poky source ./setup-environment build
 
 # Add extra Yocto layers
 echo 'BBLAYERS += "   ${BSPDIR}/sources/meta-udoo "' >>conf/bblayers.conf
