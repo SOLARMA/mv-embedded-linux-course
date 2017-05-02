@@ -22,7 +22,8 @@ ls -la
 REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
 
 # REPO_BRANCH=master-next
-REPO_BRANCH=morty
+# REPO_BRANCH=morty
+REPO_BRANCH=jethro
 
 repo init -u ${REPO_URL} -b ${REPO_BRANCH}
 
