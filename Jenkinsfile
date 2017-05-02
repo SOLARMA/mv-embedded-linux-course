@@ -41,14 +41,16 @@ repo manifest -r
     }
     stage('Configure') {
       steps {
-        sh '''#!/bin/bash -xe
+        ws(dir: 'fsl') {
+          echo 'INFO: Configuring build'
+          sh '''#!/bin/bash -xe
 
 pwd
 printenv | sort
 ls -la
 
 # EOF'''
-        sh '''#!/bin/bash -xe
+          sh '''#!/bin/bash -xe
 
 # DEBUG
 pwd
@@ -82,6 +84,8 @@ cat conf/bblayers.conf || true
 cat conf/local.conf || true
 
 # EOF'''
+        }
+        
       }
     }
     stage('Build') {
