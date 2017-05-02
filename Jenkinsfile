@@ -34,6 +34,35 @@ repo sync
 repo manifest -r
 
 # EOF'''
+        ws(dir: 'fsl') {
+          echo 'INFO: Checkout'
+          sh '''#!/bin/bash -xe
+
+id
+pwd
+ls -la
+
+# EOF'''
+          sh '''#!/bin/bash -xe
+
+REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
+
+REPO_BRANCH=master
+# REPO_BRANCH=morty
+
+repo init -u ${REPO_URL} -b ${REPO_BRANCH}
+
+# EOF'''
+          sh '''#!/bin/bash -xe
+
+repo sync
+
+# DEBUG
+repo manifest -r
+
+# EOF'''
+        }
+        
       }
     }
     stage('Configure') {
