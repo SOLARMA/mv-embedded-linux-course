@@ -90,7 +90,9 @@ cat conf/local.conf || true
     }
     stage('Build') {
       steps {
-        sh '''#!/bin/bash -xe
+        ws(dir: 'fsl') {
+          echo 'INFO: Building'
+          sh '''#!/bin/bash -xe
 
 # DEBUG
 pwd
@@ -115,6 +117,8 @@ bitbake logrotate
 # bitbake core-image-full-cmdline
 
 # EOF'''
+        }
+        
       }
     }
   }
