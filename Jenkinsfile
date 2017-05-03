@@ -113,8 +113,8 @@ source ./setup-environment build
 cat conf/local.conf
 cat conf/bblayers.conf
 
-bitbake logrotate
-# bitbake core-image-minimal
+# bitbake logrotate
+bitbake core-image-minimal
 # bitbake core-image-full-cmdline
 
 # EOF'''
