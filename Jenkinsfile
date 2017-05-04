@@ -120,6 +120,7 @@ bitbake core-image-minimal
 # EOF'''
         }
         
+        archiveArtifacts '*/deploy/*/*.img'
       }
     }
   }
