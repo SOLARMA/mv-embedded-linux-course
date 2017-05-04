@@ -134,16 +134,16 @@ bitbake core-image-minimal
 # DEBUG
 pwd
 ls -la
-ls -la fsl/
-ls -la fsl/tmp/
-ls -la fsl/tmp/deploy/
-ls -la fsl/tmp/deploy/images/
-ls -la fsl/tmp/deploy/images/udooneo/
+ls -la build/
+ls -la build/tmp/
+ls -la build/tmp/deploy/
+ls -la build/tmp/deploy/images/
+ls -la build/tmp/deploy/images/udooneo/
 
 # EOF'''
         
         // Archive the build output artifacts
-        archive includes: 'fsl/tmp/deploy/images/*/*.sdcard.gz'
+        archive includes: 'build/tmp/deploy/images/*/*.sdcard.gz'
       }
     }
   }
