@@ -19,8 +19,10 @@ ls -la
 # EOF'''
           sh '''#!/bin/bash -xe
 
+# CONFIGURABLE OPTIONS
+#
 REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
-
+#
 # REPO_BRANCH=master-next
 # REPO_BRANCH=morty
 # REPO_BRANCH=krogoth
@@ -96,13 +98,6 @@ cat conf/local.conf || true
           echo 'INFO: Building'
           sh '''#!/bin/bash -xe
 
-# DEBUG
-# pwd
-# ls -la
-# ls -la build/ || true
-# ls -la build/conf/ || true
-# ls -la sources/ || true
-
 # Workaround for "Please use a locale setting which supports utf-8."
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -118,17 +113,9 @@ cat conf/bblayers.conf
 bitbake core-image-minimal
 # bitbake core-image-full-cmdline
 
-# DEBUG
-# pwd
-# ls -la
-# ls -la tmp/ || true
-# ls -la tmp/deploy/ || true
-# ls -la tmp/deploy/images/ || true
-# ls -la tmp/deploy/images/udooneo/ || true
-
 # EOF'''
         }
-        
+
         sh '''#!/bin/bash -xe
 
 # DEBUG
@@ -141,7 +128,7 @@ ls -la build/tmp/deploy/images/
 ls -la build/tmp/deploy/images/udooneo/
 
 # EOF'''
-        
+
         // Archive the build output artifacts
         archive includes: 'build/tmp/deploy/images/*/*.sdcard.gz'
       }
