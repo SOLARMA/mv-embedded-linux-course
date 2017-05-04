@@ -129,7 +129,7 @@ ls -la tmp/deploy/images/udooneo/ || true
         }
         
         // Archive the build output artifacts
-        archiveArtifacts artifacts: 'fsl/tmp/deploy/images/*/*.sdcard.gz'
+        archive includes: 'fsl/tmp/deploy/images/*/*.sdcard.gz'
       }
     }
   }
