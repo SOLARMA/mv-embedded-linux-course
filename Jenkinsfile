@@ -23,6 +23,7 @@ REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
 
 # REPO_BRANCH=master-next
 # REPO_BRANCH=morty
+# REPO_BRANCH=krogoth
 REPO_BRANCH=jethro
 
 repo init -u ${REPO_URL} -b ${REPO_BRANCH}
@@ -96,11 +97,11 @@ cat conf/local.conf || true
           sh '''#!/bin/bash -xe
 
 # DEBUG
-pwd
-ls -la
-ls -la build/ || true
-ls -la build/conf/ || true
-ls -la sources/ || true
+# pwd
+# ls -la
+# ls -la build/ || true
+# ls -la build/conf/ || true
+# ls -la sources/ || true
 
 # Workaround for "Please use a locale setting which supports utf-8."
 export LC_ALL=en_US.UTF-8
@@ -118,15 +119,28 @@ bitbake core-image-minimal
 # bitbake core-image-full-cmdline
 
 # DEBUG
-pwd
-ls -la
-ls -la tmp/ || true
-ls -la tmp/deploy/ || true
-ls -la tmp/deploy/images/ || true
-ls -la tmp/deploy/images/udooneo/ || true
+# pwd
+# ls -la
+# ls -la tmp/ || true
+# ls -la tmp/deploy/ || true
+# ls -la tmp/deploy/images/ || true
+# ls -la tmp/deploy/images/udooneo/ || true
 
 # EOF'''
         }
+        
+        sh '''#!/bin/bash -xe
+
+# DEBUG
+pwd
+ls -la
+ls -la fsl/
+ls -la fsl/tmp/
+ls -la fsl/tmp/deploy/
+ls -la fsl/tmp/deploy/images/
+ls -la fsl/tmp/deploy/images/udooneo/
+
+# EOF'''
         
         // Archive the build output artifacts
         archive includes: 'fsl/tmp/deploy/images/*/*.sdcard.gz'
