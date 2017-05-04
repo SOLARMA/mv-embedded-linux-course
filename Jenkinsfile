@@ -109,13 +109,13 @@ source ./setup-environment build
 cat conf/local.conf
 cat conf/bblayers.conf
 
-# bitbake logrotate
-bitbake core-image-minimal
+bitbake logrotate
+# bitbake core-image-minimal
 # bitbake core-image-full-cmdline
 
 # EOF'''
         }
-
+        
         sh '''#!/bin/bash -xe
 
 # DEBUG
@@ -128,9 +128,7 @@ ls -la build/tmp/deploy/images/
 ls -la build/tmp/deploy/images/udooneo/
 
 # EOF'''
-
-        // Archive the build output artifacts
-        archive includes: 'build/tmp/deploy/images/*/*.sdcard.gz'
+        archive 'build/tmp/deploy/images/*/*.sdcard.gz'
       }
     }
   }
