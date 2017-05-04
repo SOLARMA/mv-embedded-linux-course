@@ -128,7 +128,7 @@ ls -la tmp/deploy/images/udooneo/ || true
 # EOF'''
         }
         
-        archiveArtifacts '*/deploy/*/*.img'
+        archiveArtifacts 'tmp/deploy/images/udooneo/*.sdcard.gz'
       }
     }
   }
