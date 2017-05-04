@@ -117,6 +117,14 @@ cat conf/bblayers.conf
 bitbake core-image-minimal
 # bitbake core-image-full-cmdline
 
+# DEBUG
+pwd
+ls -la
+ls -la tmp/ || true
+ls -la tmp/deploy/ || true
+ls -la tmp/deploy/images/ || true
+ls -la tmp/deploy/images/udooneo/ || true
+
 # EOF'''
         }
         
