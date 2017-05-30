@@ -128,7 +128,8 @@ ls -la build/tmp/deploy/images/
 ls -la build/tmp/deploy/images/udooneo/
 
 # EOF'''
-        archive 'build/tmp/deploy/images/*/*.sdcard.gz'
+        archive 'build/tmp/deploy/images/*/*.rootfs.manifest'
+        archive 'build/tmp/deploy/images/*/*.rootfs.wic.bz2'
       }
     }
   }
