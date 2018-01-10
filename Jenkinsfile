@@ -24,7 +24,8 @@ ls -la
 REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
 #
 # REPO_BRANCH=master-next
-REPO_BRANCH=morty
+REPO_BRANCH=pyro
+# REPO_BRANCH=morty
 # REPO_BRANCH=krogoth
 # REPO_BRANCH=jethro
 
