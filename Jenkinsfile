@@ -21,7 +21,7 @@ ls -la
 
 # CONFIGURABLE OPTIONS
 #
-REPO_URL=https://github.com/graugans/fsl-community-bsp-platform
+REPO_URL=https://github.com/graugans/udoo-community-bsp-platform
 #
 # REPO_BRANCH=master-next
 REPO_BRANCH=pyro
